@@ -1,0 +1,81 @@
+<div class="container">
+    <form #nameForm="ngForm" (ngSubmit)="onSubmit(nameForm.value)">
+      <div class="row row-cols-1 row-cols-lg-2 row-cols-md-2 row-cols-sm-1">
+        <div class="col">
+  
+          <div class="form-group">
+            <label class="fw-bolder" for="name">Your name<span>*</span></label>
+            <input type="text" name="name" class="form-control" id="name" placeholder="your name..." ngModel>
+          </div>
+  
+          <div class="form-group">
+            <label class="fw-bolder" for="companyName">Company Name<span>*</span></label>
+            <input type="text" name="companyName" class="form-control" id="companyName" placeholder="your company name..."
+              ngModel>
+          </div>
+  
+          <div class="form-group">
+            <label class="fw-bolder" for="state">State</label>
+            <input type="text" name="state" id="state" class="form-control" placeholder="our state name..." ngModel>
+          </div>
+  
+          <div class="form-group">
+            <label class="fw-bolder" for="phone">Phone<span>*</span></label>
+            <input type="tel" name="phone" id="phone" class="form-control" placeholder="your phone number..." ngModel>
+          </div>
+  
+          <div class="form-group">
+            <label class="fw-bolder" for="message">Your message</label>
+            <textarea name="message" id="message" class="form-control" rows="5" placeholder="your message..."
+              ngModel></textarea>
+          </div>
+  
+        </div>
+  
+        <div class="col">
+          <div class="form-group">
+            <label class="fw-bolder" for="titel">Titel/Designation</label>
+            <input type="text" name="titel" id="title" class="form-control" placeholder="your title/designation..."
+              ngModel>
+          </div>
+  
+          <div class="form-group">
+            <label class="fw-bolder" for="city">City</label>
+            <input type="text" name="city" id="city" class="form-control" placeholder="your city..." ngModel>
+          </div>
+  
+          <div class="form-group">
+            <label class="fw-bolder" for="country">Country</label>
+            <input type="text" name="country" id="country" class="form-control" placeholder="your country name..."
+              ngModel>
+          </div>
+  
+          <div class="form-group">
+            <label class="fw-bolder" for="email">Your email<span>*</span></label>
+            <input type="text" name="email" id="email" class="form-control" placeholder="your email..." ngModel>
+          </div>
+  
+          <div class="form-group">
+            <label class="fw-bolder" for="code">Please enter the black box text</label>
+            <input type="text" #code="ngModel" name="code" id="code" class="form-control" minlength="4" maxlength="4" placeholder="Please enter the black box text" ngModel>
+          </div>
+          <div class="d-flex">
+          <div class="code-block w-25 bg-secondary">
+            <div class="text-center text-uppercase display-6 fw-bolder fst-italic p-4" id="codegen">{{codeblock}}</div>
+          </div>
+     
+            <button type="button" (click)="capatcha()" ><i class="fa fa-recycle fa-2x"></i></button>
+          </div>
+          <div class="pt-3">
+          <button *ngIf="code.value===codeblock" type="submit" class="btn btn-primary rounded-pill text-uppercase fw-bolder px-3">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            Submit your request
+          </button>
+        </div>
+        </div>
+  
+      </div>
+  
+    </form>
+  </div>
+  
